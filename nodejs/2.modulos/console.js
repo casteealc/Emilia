@@ -22,3 +22,14 @@ console.table(cars)
 
 
 console.group('conversacion')
+console.log('hola')
+console.count('bla bla bla bla ')
+console.count('bla bla bla bla ')
+console.count('bla bla bla bla ')
+console.group('conversacion 2')
+console.countReset('bla bla bla bla ')
+console.count('bla bla bla bla ')
+console.count('bla bla bla bla ')
+console.groupEnd('conversacion 2')
+console.groupEnd('conversacion ')
+

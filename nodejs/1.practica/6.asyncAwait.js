@@ -1,53 +1,54 @@
-function hola(nombre){
-    return new promise(function (resolve, reject){
-        setTimeout(function (){
+function hola(nombre) {
+    return new Promise(function (resolve, reject){
+        setTimeout(function () {
             console.log('hola ' + nombre)
             resolve(nombre);
-        },1000);
+        }, 1000);
     
-    })
-}
-    
+    })   
+    }
+
     async function hablar(nombre) {
-        return new promise ((resolve, reject)=>{
+        return new Promise((resolve, reject)=>{
             setTimeout(function () {
                 console.log("bla bla bla bla ......");
                 resolve(nombre)
-                //reject('error en funcion Hablar');
-            }, 1000);    
-        })            
+                // reject('Error en function Hablar');
+            }, 1000);
+        })   
     }
 
     async function adios(nombre) {
-    return new promise(function (resolve,reject){
-        setTimeout(function () {
-            console.log('Adios ' + nombre)
-           reject('Error en la funcion adios');
-        }, 1000);
-    })  
-    }
-
-   
-    async function notengopromesa(){
-        console.log('no tengo una promesa')
-    }
+        return new Promise(function (resolve, reject){
+            setTimeout(function () {
+                console.log('Adios ' + nombre)
+                // reject('Error en la funcion adios');
+                resolve(nombre)
+            }, 1000);
+        })  
+        }
 
 
 
-
-    async function main(){
-
-        let nombre = await hola('carlos')
-        await hablar();
-        await hablar();
-        await hablar();
-        await hablar();
-        await adios(nombre);
-
-    }
+        async function notengopromesa(){
+            console.log('No tengo una promesa')
+        }
 
 
-    console.log('iniciando proceso.....')
-    main()
-    console.log('finalizar proceso proceso....')
-    
+
+        async function main(){
+
+            let nombre = await hola('Carlos')
+            await hablar();
+            await hablar();
+            await hablar();
+            await hablar();
+            await notengopromesa();
+            await adios(nombre);
+
+        }
+
+        console.log('iniciando proceso...')
+        main()
+        console.log('finalizar proceso...')
+
